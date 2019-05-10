@@ -75,6 +75,9 @@ $options = [
 while (!checkPortBindable($options['swoole']['ip'], $options['swoole']['port'])) {
     $options['swoole']['port'] += 1;
 }
+if ($argv && isset($argv[1])) {
+    $argv[1] = $argv[1] . '_' . $options['swoole']['port'];
+}
 $vbot = new Hanson\Vbot\Foundation\Vbot($options);
 $vbot->messageHandler->setHandler(function ($message) {
     Hanson\Vbot\Message\Text::send($message['from']['UserName'], 'Hi, I\'m Vbot!');
