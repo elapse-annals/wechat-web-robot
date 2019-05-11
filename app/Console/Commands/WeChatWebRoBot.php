@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\WeChatWebRobotController;
 use Illuminate\Console\Command;
 
 class WeChatWebRoBot extends Command
@@ -11,14 +12,14 @@ class WeChatWebRoBot extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'WeChatWebRoBot:create';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'WeChat Web RoBot Service';
 
     /**
      * Create a new command instance.
@@ -38,5 +39,6 @@ class WeChatWebRoBot extends Command
     public function handle()
     {
         //
+        (new WeChatWebRobotController())->createWeChatEnd();
     }
 }

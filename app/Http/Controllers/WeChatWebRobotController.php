@@ -28,8 +28,17 @@ class WeChatWebRobotController extends Controller
      * @param $framework
      * @param $framework_name
      * @param $is_delete
+     *
+     * @throws \Exception
      */
     public function handle($framework, $framework_name, $is_delete)
+    {
+        Artisan::call('WeChatWebRoBot:create');
+        sleep(1);
+        $options = cache('session_key_' . session());
+    }
+
+    public function createWeChatEnd()
     {
         $this->service->createWeChatEnd();
     }
