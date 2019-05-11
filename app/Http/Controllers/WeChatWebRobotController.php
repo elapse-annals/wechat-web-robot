@@ -31,11 +31,12 @@ class WeChatWebRobotController extends Controller
      *
      * @throws \Exception
      */
-    public function handle($framework, $framework_name, $is_delete)
+    public function handle()
     {
         Artisan::call('WeChatWebRoBot:create');
         sleep(1);
         $options = cache('session_key_' . session());
+        dd($options);
     }
 
     public function createWeChatEnd()
