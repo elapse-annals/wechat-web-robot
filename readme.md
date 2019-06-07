@@ -22,5 +22,3 @@ php public/run.php --session=vbot1 // 单独创建一个微信机器人服务
 
 #### todo
 * 多码扫描管理
-* 拉手功能
-
